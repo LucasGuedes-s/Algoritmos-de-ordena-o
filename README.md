@@ -3,7 +3,7 @@
 <h2>Participantes</h2>
 
 * João Paulo Santos 
->**Linkedln:** [João Paulo]([https://www.linkedin.com/in/jo%C3%A3opaulosantos/)
+>**Linkedln:** [João Paulo](https://www.linkedin.com/in/jo%C3%A3opaulosantos/)
 >>**GitHub:** [João Paulo](https://github.com/joaopaulooss)
 
 * Lucas Gabriel Guedes Limeira
