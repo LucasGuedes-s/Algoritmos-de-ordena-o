@@ -31,7 +31,7 @@ int main()
     //Preenchendo o vetor com valores aleatórios
     
     for (int i = 0; i < vetor.size(); i++) {
-        vetor[i] = rand() % 500 + 1; // Limitando os valores somente de 1 - 500
+        vetor[i] = rand() % 100 + 1; // Limitando os valores somente de 1 - 500
     }
     
     // Gerando cópias do vetor para serem testadas em cada algorítmo de ordenação
@@ -56,7 +56,7 @@ int main()
     //Mostrar os valores do vetor já ordenado! Esse for serve para confirmar se o vetor esta sendo ordenado
     
     for(int j = 0; j < v_insertionSort.size(); j++){
-        cout<<vetor[j]<<endl;
+        cout<<v_insertionSort[j]<<endl;
     }
     
     return 0;
