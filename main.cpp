@@ -1,8 +1,10 @@
 #include <iostream>
+#include <chrono>
 #include <vector> /*Biblioteca ultilizada para gerar vetores */
-#include <random> /*Biblioteca ultilizada para preencher vetor */
+#include <random> /*Biblioteca ultilizada para contagem do tempo */
 
 using namespace std;
+using namespace std::chrono;
 
 //BubbleSort
 void bubbleSort(vector<int> &v){
@@ -110,14 +112,15 @@ void mergeSort(vector<int> &v, int low, int high){
 
 int main()
 {
-    vector<int> vetor(10);
-    
+    vector<int> vetor(1000);
+    cout<<"Crou o vetor"<<endl;
     //Preenchendo o vetor com valores aleatórios
     
     for (int i = 0; i < vetor.size(); i++) {
         vetor[i] = rand() % 100 + 1; // Limitando os valores somente de 1 - 500
     }
-    
+    cout<<"Preencheu o vetor"<<endl;
+
     // Gerando cópias do vetor para serem testadas em cada algorítmo de ordenação
     
     vector<int> v_bubbleSort = vetor;
@@ -126,29 +129,22 @@ int main()
     vector<int> v_shellSort = vetor;
     vector<int> v_quickSort = vetor;
     vector<int> v_mergeSort = vetor;
+    
+    cout<<"copias o vetor"<<endl;
 
+    auto inicio_insertion = high_resolution_clock::now();
     insertionSort(v_insertionSort);
-    mergeSort(v_mergeSort, 0, v_mergeSort.size() - 1);
-	bubbleSort(v_bubbleSort);
-	selectionSort(v_selectionSort);
+    auto fim_insertion = high_resolution_clock::now();
+    duration<double> tempo = fim_insertion - inicio_insertion;
     
-    //Mostrar os valores do vetor desordenado
+    auto inicio_bubble = high_resolution_clock::now();
+    bubbleSort(v_bubbleSort);
+    auto fim_bubble = high_resolution_clock::now();
+    duration<double> tempo_bubble = fim_bubble - inicio_bubble;
 
-    for(int j = 0; j < vetor.size(); j++){
-        cout<<vetor[j]<<endl;
-    }
     
-    //Mostrar os valores do vetor já ordenado! Esse for serve para confirmar se o vetor esta sendo ordenado
-    cout<< "---------insertionSort---------"<<endl;
+    cout << "Tempo (insertionSort): " << fixed << tempo.count() << "s" << endl;
+    cout << "Tempo (bubbleSort): " << fixed << tempo_bubble.count() << "s" << endl;
 
-    for(int j = 0; j < v_insertionSort.size(); j++){
-        cout<<v_insertionSort[j]<<endl;
-    }
-    
-    cout<< "---------MergeSort---------"<<endl;
-
-    for(int j = 0; j < v_mergeSort.size(); j++){
-        cout<<v_mergeSort[j]<<endl;
-    }
     return 0;
 }
