@@ -1,13 +1,26 @@
 #include <iostream>
 #include <vector> /*Biblioteca ultilizada para gerar vetores */
-#include <random> /*Biblioteca ultilizada para contagem do tempo */
+#include <random> /*Biblioteca ultilizada para preencher vetor */
 
 using namespace std;
 
-
+//BubbleSort
+void bubbleSort(vector<int> &v){
+	
+	int n=v.size();
+	
+	for(int i=0; i<n-1; i++){
+		for (int j=0; j<n-i-1; j++){
+			if(v[j] > v[j+1]){
+				int temp = v[j];
+				v[j] = v[j+1];
+				v[j+1] = temp;
+			} 
+		}
+	}
+}
 
 //insertionSort
-
 void insertionSort(vector<int> &v){
 
 	int n = v.size();
@@ -23,6 +36,25 @@ void insertionSort(vector<int> &v){
 			j = j-1;
 		}
 		v[j+1] = key;
+	}
+}
+
+//selectionSort
+void selectionSort(vector<int> &v){
+	
+	int min_idx;
+	int n=v.size();
+	for(int i=0; i<n-1; i++){
+		min_idx=i;
+		for(int j=i+1; j<n; j++){
+			if(v[j] < v[min_idx])
+				min_idx=j;
+		}
+		if(min_idx!=i){
+			int temp = v[min_idx];
+			v[min_idx] = v[i];
+			v[i] = temp;
+		}
 	}
 }
 
@@ -94,9 +126,11 @@ int main()
     vector<int> v_shellSort = vetor;
     vector<int> v_quickSort = vetor;
     vector<int> v_mergeSort = vetor;
-    
+
     insertionSort(v_insertionSort);
     mergeSort(v_mergeSort, 0, v_mergeSort.size() - 1);
+	bubbleSort(v_bubbleSort);
+	selectionSort(v_selectionSort);
     
     //Mostrar os valores do vetor desordenado
 
