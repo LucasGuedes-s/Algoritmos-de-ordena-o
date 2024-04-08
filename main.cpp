@@ -112,39 +112,50 @@ void mergeSort(vector<int> &v, int low, int high){
 
 int main()
 {
-    vector<int> vetor(1000);
-    cout<<"Crou o vetor"<<endl;
+    vector<int> vetor(10);
     //Preenchendo o vetor com valores aleatórios
     
     for (int i = 0; i < vetor.size(); i++) {
         vetor[i] = rand() % 100 + 1; // Limitando os valores somente de 1 - 500
     }
-    cout<<"Preencheu o vetor"<<endl;
-
+    
     // Gerando cópias do vetor para serem testadas em cada algorítmo de ordenação
     
     vector<int> v_bubbleSort = vetor;
-    vector<int> v_selectionSort = vetor;
     vector<int> v_insertionSort = vetor;
-    vector<int> v_shellSort = vetor;
-    vector<int> v_quickSort = vetor;
+    vector<int> v_selectionSort = vetor;
     vector<int> v_mergeSort = vetor;
-    
-    cout<<"copias o vetor"<<endl;
+    vector<int> v_quickSort = vetor;
+    vector<int> v_shellSort = vetor;
 
-    auto inicio_insertion = high_resolution_clock::now();
-    insertionSort(v_insertionSort);
-    auto fim_insertion = high_resolution_clock::now();
-    duration<double> tempo = fim_insertion - inicio_insertion;
-    
+    /*Tempo (bubbleSort)*/
     auto inicio_bubble = high_resolution_clock::now();
     bubbleSort(v_bubbleSort);
     auto fim_bubble = high_resolution_clock::now();
     duration<double> tempo_bubble = fim_bubble - inicio_bubble;
-
     
-    cout << "Tempo (insertionSort): " << fixed << tempo.count() << "s" << endl;
+    /*Tempo (insertionSort)*/
+    auto inicio_insertion = high_resolution_clock::now();
+    insertionSort(v_insertionSort);
+    auto fim_insertion = high_resolution_clock::now();
+    duration<double> tempo_insertion = fim_insertion - inicio_insertion;
+    
+    /*Tempo (selectionSort)*/
+    auto inicio_selection = high_resolution_clock::now();
+    selectionSort(v_selectionSort);
+    auto fim_selection = high_resolution_clock::now();
+    duration<double> tempo_selection = fim_selection - inicio_selection;
+    
+    /*Tempo (mergeSortSort)*/
+    auto inicio_mergin = high_resolution_clock::now();
+    mergeSort(v_mergeSort, 0, v_mergeSort.size() - 1);
+    auto fim_mergin = high_resolution_clock::now();
+    duration<double> tempo_merge = fim_mergin - inicio_mergin;
+    
     cout << "Tempo (bubbleSort): " << fixed << tempo_bubble.count() << "s" << endl;
+    cout << "Tempo (insertionSort): " << fixed << tempo_insertion.count() << "s" << endl;
+    cout << "Tempo (selectionSort): " << fixed << tempo_selection.count() << "s" << endl;
+    cout << "Tempo (mergeSort): " << fixed << tempo_merge.count() << "s" << endl;
 
     return 0;
 }
