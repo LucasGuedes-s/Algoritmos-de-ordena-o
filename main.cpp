@@ -140,6 +140,26 @@ void quickSort(vector<int> &v, int low, int high){
 		quickSort(v, pi + 1, high);
 	}
 }
+
+//shellSort
+
+void shellSort(vector<int> &v){
+	/*
+		Parameters:
+		v = input array to be ordered
+	*/
+	int n=v.size();
+	for (int h=n/2; h>0;h/=2){
+		for (int i=h;i<n;i+=1){
+			int temp=v[i];
+			int j;
+			for (j=i;j>=h && v[j-h]>temp;j-=h)
+				v[j]=v[j-h];
+			v[j]=temp;
+		}
+	}
+}
+
 int main()
 {
     vector<int> vetor(50);
@@ -189,13 +209,17 @@ int main()
     duration<double> tempo_quick = fim_quick - inicio_quick;
     
     /*Tempo (shellSort)*/
-
+    auto inicio_shell = high_resolution_clock::now();
+    shellSort(v_shellSort);
+    auto fim_shell = high_resolution_clock::now();
+    duration<double> tempo_shell = fim_shell - inicio_shell;
+    
     cout << "Tempo (bubbleSort): " << fixed << tempo_bubble.count() << "s" << endl;
     cout << "Tempo (insertionSort): " << fixed << tempo_insertion.count() << "s" << endl;
     cout << "Tempo (selectionSort): " << fixed << tempo_selection.count() << "s" << endl;
     cout << "Tempo (mergeSort): " << fixed << tempo_merge.count() << "s" << endl;
     cout << "Tempo (quickSort): " << fixed << tempo_quick.count() << "s" << endl;
-    // cout << "Tempo (shellSort): " << fixed << .count() << "s" << endl;
+    cout << "Tempo (shellSort): " << fixed << tempo_shell.count() << "s" << endl;
 
     return 0;
 }
