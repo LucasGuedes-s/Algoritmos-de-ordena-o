@@ -6,6 +6,12 @@
 using namespace std;
 using namespace std::chrono;
 
+void swap(int* a, int* b){
+	int t = *a;
+	*a = *b;
+	*b = t;
+}
+
 //BubbleSort
 void bubbleSort(vector<int> &v){
 	
@@ -109,10 +115,34 @@ void mergeSort(vector<int> &v, int low, int high){
 	}
 
 }
+//v_quickSort
 
+int partition(vector<int> &v, int low, int high){
+	int pivot = v[high];
+	int i = (low - 1);
+	
+	for (int j = low; j <= high - 1; j++) {
+		if (v[j] < pivot) {
+		    
+			i++;
+			swap(&v[i], &v[j]);
+		}
+	}
+	swap(&v[i + 1], &v[high]);
+	
+	return (i + 1);
+}
+
+void quickSort(vector<int> &v, int low, int high){
+	if (low < high) { 
+		int pi = partition(v, low, high);
+		quickSort(v, low, pi - 1);
+		quickSort(v, pi + 1, high);
+	}
+}
 int main()
 {
-    vector<int> vetor(10);
+    vector<int> vetor(50);
     //Preenchendo o vetor com valores aleatórios
     
     for (int i = 0; i < vetor.size(); i++) {
@@ -152,10 +182,20 @@ int main()
     auto fim_mergin = high_resolution_clock::now();
     duration<double> tempo_merge = fim_mergin - inicio_mergin;
     
+    /*Tempo (quickSort)*/
+    auto inicio_quick = high_resolution_clock::now();
+    quickSort(v_quickSort, 0, v_mergeSort.size() - 1);
+    auto fim_quick = high_resolution_clock::now();
+    duration<double> tempo_quick = fim_quick - inicio_quick;
+    
+    /*Tempo (shellSort)*/
+
     cout << "Tempo (bubbleSort): " << fixed << tempo_bubble.count() << "s" << endl;
     cout << "Tempo (insertionSort): " << fixed << tempo_insertion.count() << "s" << endl;
     cout << "Tempo (selectionSort): " << fixed << tempo_selection.count() << "s" << endl;
     cout << "Tempo (mergeSort): " << fixed << tempo_merge.count() << "s" << endl;
+    cout << "Tempo (quickSort): " << fixed << tempo_quick.count() << "s" << endl;
+    // cout << "Tempo (shellSort): " << fixed << .count() << "s" << endl;
 
     return 0;
 }
