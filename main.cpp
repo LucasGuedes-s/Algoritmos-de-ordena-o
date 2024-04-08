@@ -68,7 +68,7 @@ void selectionSort(vector<int> &v){
 
 //MerginSort
 void merge(vector<int> &v, int low, int high, int mid){
-	int i, j, k, c[50];
+	int i, j, k, c[v.size()];
 	
 	i = low;
 	k = low;
@@ -144,11 +144,8 @@ void quickSort(vector<int> &v, int low, int high){
 //shellSort
 
 void shellSort(vector<int> &v){
-	/*
-		Parameters:
-		v = input array to be ordered
-	*/
 	int n=v.size();
+	
 	for (int h=n/2; h>0;h/=2){
 		for (int i=h;i<n;i+=1){
 			int temp=v[i];
@@ -162,7 +159,7 @@ void shellSort(vector<int> &v){
 
 int main()
 {
-    vector<int> vetor(50);
+    vector<int> vetor(5000);
     //Preenchendo o vetor com valores aleatórios
     
     for (int i = 0; i < vetor.size(); i++) {
