@@ -16,16 +16,24 @@ Neste estudo, serão exploradas as características, complexidades e desempenhos
 6. Shell Sort
 
 ## Metodologia
-Este trabalho visa comparar algoritmos de ordenação usando C++, uma linguagem compilada e de médio nível, com o auxílio do ambiente de desenvolvimento DEV C++. Foram utilizadas bibliotecas essenciais, como Chrono para medir o tempo de execução, Vector para criar vetores de diferentes tamanhos e Random para gerar valores aleatórios nesses vetores. O estudo envolveu a comparação do desempenho dos algoritmos através de tabelas e gráficos.
+O objetivo deste trabalho é realizar um estudo comparativo entre algoritmos de ordenação, utilizando a linguagem de programação C + +, conhecida por ser compilada e de multi-paradigma, além de ser de médio nível. Para este propósito, empregou-se o ambiente de desenvolvimento integrado livre, DEV C + +, o qual desempenhou um papel fundamental na compilação e execução do código.
+Além disso, é importante mencionar algumas bibliotecas essenciais para o êxito do estudo. Entre elas, destacam-se:
+- **Biblioteca Chrono** que permitiu a medição do tempo de execução de cada algoritmo. Com essa ferramenta, foi possível criar tabelas e gráficos comparativos, mostrando o tempo de execução em segundos de cada algoritmo.
+- **Biblioteca Vector** que foi responsável por gerar os vetores conforme os tamanhos necessários. No entanto, os vetores foram criados com espaços vazios ou, até mesmo, sem preenchimento conhecido. Por esse motivo, foi necessário utilizar outra ferramenta para o preenchimento desses vetores criados.
+- **Biblioteca Random** que desempenhou o papel de sortear aleatoriamente valores a serem adicionados aos vetores de diferentes tamanhos. Dessa forma, foi possível gerar vetores com dados aleatórios para serem organizados pelos algoritmos de ordenação.
+
 
 ## Resultados
+Para acessar os resultados e conclusões da pesquisa, acesse o artigo no **Medium:** 
 
 ## Autores
-João Paulo Santos da Silva
+**João Paulo Santos da Silva**
 >**Linkedln:** [João Paulo](https://www.linkedin.com/in/jo%C3%A3opaulosantos/)
->>**GitHub:** [João Paulo](https://github.com/joaopaulooss)
 
-Lucas Gabriel Guedes Limeira
+>**GitHub:** [João Paulo](https://github.com/joaopaulooss)
+
+**Lucas Gabriel Guedes Limeira**
 >**Linkedln:** [Lucas Guedes](https://www.linkedin.com/in/lucas-gabriel-guedes/)
->>**GitHub:** [Lucas Guedes](https://github.com/LucasGuedes-s)
+
+>**GitHub:** [Lucas Guedes](https://github.com/LucasGuedes-s)
 
