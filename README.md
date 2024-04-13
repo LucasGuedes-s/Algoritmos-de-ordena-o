@@ -16,6 +16,7 @@ Neste estudo, serão exploradas as características, complexidades e desempenhos
 6. Shell Sort
 
 ## Metodologia
+Este trabalho visa comparar algoritmos de ordenação usando C++, uma linguagem compilada e de médio nível, com o auxílio do ambiente de desenvolvimento DEV C++. Foram utilizadas bibliotecas essenciais, como Chrono para medir o tempo de execução, Vector para criar vetores de diferentes tamanhos e Random para gerar valores aleatórios nesses vetores. O estudo envolveu a comparação do desempenho dos algoritmos através de tabelas e gráficos.
 
 ## Resultados
 
