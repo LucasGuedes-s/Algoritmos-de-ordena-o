@@ -24,7 +24,7 @@ Além disso, é importante mencionar algumas bibliotecas essenciais para o êxit
 
 
 ## Resultados
-Para acessar os resultados e conclusões da pesquisa, acesse o artigo no **Medium:** 
+Para acessar os resultados e conclusões da pesquisa, acesse o artigo no **Medium:** https://medium.com/@joaopauloss/explorando-os-algoritmos-de-ordenação-um-estudo-comparativo-de-eficiência-e-desempenho-f88a911964ea
 
 ## Autores
 **João Paulo Santos da Silva**
